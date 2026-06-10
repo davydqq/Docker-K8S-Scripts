@@ -7,3 +7,5 @@ docker run --name es01 -e "http.cors.enabled=true" -e "http.cors.allow-origin=ht
 https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 
 docker run --name es01 --net elastic -p 9200:9200 -it -m 2GB -e "xpack.ml.use_auto_machine_memory_percent=true" docker.elastic.co/elasticsearch/elasticsearch:9.3.3
+
+docker run --name es01 --net elastic -p 9200:9200 -it -m 1GB docker.elastic.co/elasticsearch/elasticsearch:9.4.2

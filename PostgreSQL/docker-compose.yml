@@ -1,15 +1,17 @@
-   version: "3"
-   services:
-     db:
-       image: postgres
-       restart: unless-stopped
-       environment:
-         - POSTGRES_USER=postgres
-         - POSTGRES_PASSWORD=admin
-         - POSTGRES_DB=postgres
-       ports:
-         - "5432:5432"
-       volumes:
-         - pgdata:/var/lib/postgresql/data
-   volumes: 
-     pgdata:
+version: "3"
+
+services:
+  db:
+    image: postgres:18
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
