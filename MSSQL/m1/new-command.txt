@@ -1,0 +1,5 @@
+docker volume create mssql_data
+
+docker run -e ACCEPT_EULA=Y -e MSSQL_SA_PASSWORD=YourStrongPassword123! -p 1433:1433 --name sql_server -v mssql_data:/var/opt/mssql -d mcr.microsoft.com/mssql/server:2022-latest
+
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -p 1433:1433 --name sql_server -v mssql_data:/var/opt/mssql --platform linux/amd64 mcr.microsoft.com/mssql/server:2022-latest
